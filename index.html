@@ -31,8 +31,9 @@
     <form class="search">
       <fieldset>
         <legend>Search bar</legend>
-        <input for="submit" type="search" name="q" placeholder="Search query">
-        <input id="submit" type="submit" value="Go!">
+        <label for="search query">Search Here</label>
+        <input id="search query" for="submit" type="search" name="q" placeholder="">
+        <input id="submit" type="submit" name="submit" value="Go!">
       </fieldset>
 
     </form>
@@ -41,7 +42,7 @@
   <main>
     <article>
       <h2>The trouble with Bears</h2>
-      <h4> By Evan Wild</h4>
+      <h2> By Evan Wild</h2>
 
       <p> Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures,
         self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned
@@ -64,7 +65,7 @@
       <table>
         <thead>
           <tr>
-            <td>Bear Type</td>
+            <th>Bear Type</th>
             <td>Coat</td>
             <td>Adult size</td>
             <td>Habitat</td>
@@ -74,22 +75,25 @@
         </thead>
         <tbody>
           <tr>
-            <td>Wild</td>
+            <th>Wild</th>
             <td>Brown or black</td>
             <td>1.4 to 2.8 meters</td>
             <td>Woods and forests</td>
             <td>25 to 28 years</td>
             <td>Fish, meat, plants</td>
           </tr>
+        </tbody>
+        <tfoot>
           <tr>
-            <td>Urban</td>
+            <th>Urban</th>
             <td>North Face</td>
             <td>18 to 22</td>
             <td>Condos and coffee shops</td>
             <td>20 to 32 years</td>
             <td>Starbucks, sushi</td>
           </tr>
-        </tbody>
+        </tfoot>
+    
       </table>
 
       <h3>Habitats and Eating habits</h3>
@@ -133,9 +137,10 @@
       </audio>
       <p>It looks like your browser doesn't support HTML5 audio players <a href="./media/bear.mp3"
           alt="a link to the bear audio">Click here to listen
-          to the audio.</a>.</p>
-      <h3>Transcripts</h3>
-      <p>This is n't really an audio file about bears but it is an audio file you can transcribe.</p>
+          to the audio.</a>.
+          <h3>Transcripts</h3>
+          <p>This is n't really an audio file about bears but it is an audio file you can transcribe.</p>
+   
 
 
       <aside>
@@ -159,11 +164,11 @@
 
           <form class="comment-form">
             <div class="flex-pair">
-              Your name:
+              <label for="name">name:</label> 
               <input type="text" name="name" id="name" placeholder="Enter your name">
             </div>
             <div class="flex-pair">
-              Your comment:
+              <label for="comment">comment:</label> 
               <input type="text" name="comment" id="comment" placeholder="Enter your comment">
             </div>
             <div>
@@ -177,7 +182,7 @@
 
             <li>
 
-              <p>Bob Fossil</p>
+              <h4>Bob Fossil</h4>
 
               <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing
                 little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in

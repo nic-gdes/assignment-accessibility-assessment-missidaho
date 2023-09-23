@@ -6,7 +6,7 @@ html, body {
 }
 
 html {
-  font-size: 10px;
+  font-size: 12px;
   background-color: #2d4221;
 }
 
@@ -18,13 +18,13 @@ body {
 
 /* || typography */
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
 
 p, input, li, table, label {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: sans-serif;
   color: #2d4221;
 }
 
@@ -141,10 +141,12 @@ table {
   width: 100%;
   background-color: #dde;
   border-collapse: collapse;
+ 
 }
 
 th, td {
   padding: 10px;
+  border: #2d4221 solid 1px;
 }
 
 td {
@@ -178,6 +180,11 @@ audio {
 
 .show-hide {
   cursor: pointer;
+  background-color: #2d4221;
+}
+.show-hide:hover {
+  cursor: pointer;
+  background-color: #526e42;
 }
 
 .comments font[size="6"] {
@@ -232,11 +239,12 @@ audio {
 
 .comment-container {
   margin-top: 0;
+  display: block;
 }
 
 .comment-container li {
   list-style-type: none;
-  display: flex;
+  display: block;
 }
 
 .comment-container li p:nth-child(1) {

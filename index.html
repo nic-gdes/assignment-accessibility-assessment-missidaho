@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en"> <!-- the <html> element is the topmost element, above the <head> and <body>. Good job adding the language though! -->
 <head>
   <meta charset="utf-8">
 
@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
     type="text/css">
   <link rel="stylesheet" href="style.css">
-  <html lang="en">
+  
 
   <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
   <!--[if lt IE 9]>
@@ -16,33 +16,37 @@
 </head>
 
 <body>
-  <div class="header">
-    <h1>Welcome to our wildlife website</h1>
-  </div>
-
-  <div class="nav">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Our team</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-
-    <form class="search">
-      <fieldset>
-        <legend>Search bar</legend>
-        <label for="search query">Search Here</label>
-        <input id="search query" for="submit" type="search" name="q" placeholder="">
-        <input id="submit" type="submit" name="submit" value="Go!">
-      </fieldset>
-
-    </form>
-  </div>
+  <header>
+    
+    <div class="header">
+      <h1>Welcome to our wildlife website</h1>
+    </div>
+    <div class="nav">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our team</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <!-- Wrap your link lists with the <nav> tag so screen readers understand that it's a list specifically for links -->
+      <form class="search">
+        <fieldset>
+          <legend>Search bar</legend>
+          <label for="searchquery">Search Here</label>
+          <input id="searchquery" type="search" name="q" placeholder=""> <!-- IDs can't have spaces. You also only need a for="" attribute on the <label> specifically, it doesn't belong on anything else. If you want to omit the label, you can add aria-label attribute instead -->
+          <input id="submit" type="submit" name="submit" value="Go!">
+        </fieldset>
+      </form>
+    </div>
+  </header><!-- You want to semantically tell screen readers that this is all included in the website's header -->
+  
 
   <main>
     <article>
       <h2>The trouble with Bears</h2>
-      <h2> By Evan Wild</h2>
+      <h2> By Evan Wild</h2> <!-- this probably doesn't need to be a heading -->
 
       <p> Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures,
         self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned
@@ -63,38 +67,38 @@
         out below. The below table also gives you some useful facts about bears.</p>
 
       <table>
+        <caption>Types of Bear</caption>
         <thead>
           <tr>
-            <th>Bear Type</th>
-            <td>Coat</td>
-            <td>Adult size</td>
-            <td>Habitat</td>
-            <td>Lifespan</td>
-            <td>Diet</td>
+            <th scope="col">Bear Type</th>
+            <th scope="col">Coat</th>
+            <th scope="col">Adult size</th>
+            <th scope="col">Habitat</th>
+            <th scope="col">Lifespan</th>
+            <th scope="col">Diet</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>Wild</th>
+            <th scope="row">Wild</th>
             <td>Brown or black</td>
             <td>1.4 to 2.8 meters</td>
             <td>Woods and forests</td>
             <td>25 to 28 years</td>
             <td>Fish, meat, plants</td>
           </tr>
-        </tbody>
-        <tfoot>
+        
           <tr>
-            <th>Urban</th>
+            <th scope="row">Urban</th>
             <td>North Face</td>
             <td>18 to 22</td>
             <td>Condos and coffee shops</td>
             <td>20 to 32 years</td>
             <td>Starbucks, sushi</td>
           </tr>
-        </tfoot>
-    
+        </tbody>
       </table>
+      <!-- to make the table more accessible, you want to add either a summary="" attribute to the <table> element with a short description, or add a <caption> element inside of the table to give a brief description -->
 
       <h3>Habitats and Eating habits</h3>
       <p> Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they
@@ -133,11 +137,9 @@
       <audio controls>
         <source src="media/bear.mp3" type="audio/mp3">
         <source src="media/bear.ogg" type="audio/ogg">
-
+        <p>It looks like your browser doesn't support HTML5 audio players <a href="./media/bear.mp3">Click here to listento the audio.</a>.</p> <!-- this actually does belong inside the <audio> element, it's a backup in case the user's browser can't utilize any of the above <source> files. Great job adding an outside link (we'll pretend it goes to a different type of file) -->
       </audio>
-      <p>It looks like your browser doesn't support HTML5 audio players <a href="./media/bear.mp3"
-          alt="a link to the bear audio">Click here to listen
-          to the audio.</a>.
+      
           <h3>Transcripts</h3>
           <p>This is n't really an audio file about bears but it is an audio file you can transcribe.</p>
    
@@ -156,7 +158,7 @@
 
       </aside>
       <section class="comments">
-        <div class="show-hide">Show comments</div>
+        <button class="show-hide">Show comments</button> <!-- we want users to be able to quickly be able to interact with this object since it's able to be interacted with. You could add a tabindex so users can tab to it, or you can simply make it a button instead of a div. -->
 
         <div class="comment-wrapper">
 
@@ -199,13 +201,15 @@
     <div class="secondary">
       <h2>Related</h2>
 
-      <ul>
-        <li><a href="#">The trouble with Bees</a></li>
-        <li><a href="#">The trouble with Otters</a></li>
-        <li><a href="#">The trouble with Penguins</a></li>
-        <li><a href="#">The trouble with Octopi</a></li>
-        <li><a href="#">The trouble with Lemurs</a></li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a href="#">The trouble with Bees</a></li>
+          <li><a href="#">The trouble with Otters</a></li>
+          <li><a href="#">The trouble with Penguins</a></li>
+          <li><a href="#">The trouble with Octopi</a></li>
+          <li><a href="#">The trouble with Lemurs</a></li>
+        </ul>
+      </nav>
     </div>
   </main>
 
